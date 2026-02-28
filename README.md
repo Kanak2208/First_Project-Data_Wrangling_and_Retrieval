@@ -91,22 +91,95 @@ The two sources used different continent/region categories, so we aligned them:
 ---
 
 ## Exploratory Data Analysis (EDA)
-Visualizations created in the notebook:
-1. **Average BMI by Continent** (bar chart)
-2. **Average BMI vs Happiness Level by Continent** (grouped mean bar chart)
-3. **BMI vs Happiness Level** (regression plot)
-4. **BMI vs Life Expectancy** (regression plot)
-5. **Observations per Continent by Gender** (countplot)
+
+After cleaning and merging the datasets at the continent level, we conducted exploratory data analysis to evaluate our hypotheses.
+
+### 1. Obesity Variation Across Continents
+
+We analyzed the average BMI by continent using boxplots and statistical significance testing.
+
+Key observations:
+- The top three continents with the highest BMI averages:
+  1. Australia
+  2. Americas
+  3. Europe
+- Australia showed the highest variability in BMI values.
+- Europe and Africa displayed a higher number of outliers.
+
+Statistical Testing:
+We performed pairwise significance testing (p-value matrix).
+
+- Australia shows statistically significant differences (p < 0.05) compared to all other continents.
+- Africa and Asia are statistically similar.
+- Europe and Americas are statistically similar.
+
+Conclusion:
+The hypothesis that “Obesity levels vary significantly across continents” is supported.
 
 ---
 
-## Key Findings (From Notebook Analysis)
-- BMI levels differ across continents (supporting H1).
-- Continents with lower BMI tend to show higher happiness levels; the notebook highlights **Asia** as an example (supporting H2).
-- The regression plots suggest a relationship pattern between BMI and life expectancy (direction/strength depends on data aggregation and limitations).
+### 2. BMI and Happiness Relationship
+
+We compared average BMI and happiness level by continent.
+
+Findings:
+- Continents with lower BMI values (Asia and Africa) do not consistently show the highest happiness levels.
+- Europe and Americas show high happiness levels despite moderate BMI.
+- Australia has high BMI and relatively high happiness.
+
+Conclusion:
+The relationship between BMI and happiness is not strictly inverse.
+The hypothesis that “Continents with lower obesity levels tend to show higher happiness levels” is rejected.
 
 ---
 
+### 3. BMI and Life Expectancy
+
+We compared BMI and life expectancy averages by continent.
+
+Findings:
+- Asia shows the highest life expectancy despite low BMI.
+- Australia and Europe also show high life expectancy with higher BMI values.
+- Africa has both lower life expectancy and lower BMI.
+
+Conclusion:
+There is no clear linear relationship between BMI and life expectancy at the continent level.
+Other socio-economic and healthcare factors likely influence life expectancy more strongly.
+
+---
+
+## Key Findings
+
+1. BMI levels vary significantly across continents.
+   - Australia has the highest average BMI and shows significant differences compared to other continents.
+   - Africa and Asia are statistically similar.
+   - Europe and Americas are statistically similar.
+
+2. The hypothesis that obesity levels vary across continents is accepted.
+
+3. The hypothesis that lower obesity leads to higher happiness is rejected.
+   - High happiness levels are observed in Europe and Americas despite moderate BMI.
+   - The relationship between BMI and happiness is not directly proportional.
+
+4. No strong linear relationship was found between BMI and life expectancy at the continent level.
+
+5. Aggregating data at the continent level may hide country-level variations.
+---
+## Final Conclusion
+
+Our analysis confirms that obesity levels differ significantly across continents, supporting our first hypothesis.
+
+However, the assumption that lower BMI automatically leads to higher happiness and life expectancy was not fully supported by the data.
+
+This suggests that quality of life indicators such as happiness and longevity are influenced by multiple factors beyond BMI alone, including healthcare systems, economic stability, and social well-being.
+
+Future improvements:
+- Conduct country-level analysis instead of continent-level aggregation.
+- Study gender-based differences in BMI.
+- Integrate lifestyle and dietary datasets.
+- Perform deeper statistical modeling.
+
+---
 ## Limitations
 - The second dataset is city-based and then mapped to continents, while the API is region/continent-based.
 - The merge is continent-level, which reduces granularity (country-level matching would improve accuracy).
