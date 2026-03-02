@@ -18,7 +18,7 @@ We combine data from a public health API with a separate dataset containing qual
 ## Research Questions & Hypotheses
 
 ### Hypothesis 1 – Obesity Variation  
-Obesity levels vary across continents due to lifestyle and dietary differences.
+Obesity levels vary across continents.
 
 ### Hypothesis 2 – Happiness Correlation  
 Continents with lower obesity levels tend to show higher happiness levels.
